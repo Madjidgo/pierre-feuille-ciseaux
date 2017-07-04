@@ -1,7 +1,22 @@
 var comp1 =0;
 var comp2 = 0;
 var nom = prompt("Entrez votre nom");
-nom = comp1;
+
+var compte = 0;
+
+function chrono()
+{
+  document.getElementById("chrono").innerHTML = "vous avez passé "+" "+compte+ " "+"s" ;
+  compte++;
+}
+
+function start()
+{
+  setInterval(chrono, 1000);
+
+}
+window.onload = start;
+
 
 
 while(comp1 !== 3 && comp2 !==3  && choixUtilisateur !== "stop"){
