@@ -1,5 +1,8 @@
 var comp1 =0;
 var comp2 = 0;
+var nom = prompt("Entrez votre nom");
+nom = comp1;
+
 
 while(comp1 !== 3 && comp2 !==3  && choixUtilisateur !== "stop"){
 
