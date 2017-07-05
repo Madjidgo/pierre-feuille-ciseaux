@@ -1,21 +1,31 @@
 var comp1 =0;
 var comp2 = 0;
-var nom = prompt("Entrez votre nom");
 
-var compte = 0;
+// dom
 
-function chrono()
-{
-  document.getElementById("chrono").innerHTML = "vous avez passé "+" "+compte+ " "+"s" ;
-  compte++;
+var bP = document.querySelector('#btnP');
+var bF = document.querySelector('#btnF');
+var bC = document.querySelector('#btnC');
+
+var divP = document.querySelector('#divP');
+var divF = document.querySelector('#divF');
+var divC = document.querySelector('#divC');
+
+bP.addEventListener('click',p);
+function p(){
+ divP.style.display = 'block';
 }
 
-function start()
-{
-  setInterval(chrono, 1000);
-
+bF.addEventListener('click',f);
+function f(){
+ divF.style.display = 'block';
 }
-window.onload = start;
+
+bC.addEventListener('click',c);
+function c(){
+ divC.style.display = 'block';
+}
+
 
 
 
@@ -23,13 +33,14 @@ while(comp1 !== 3 && comp2 !==3  && choixUtilisateur !== "stop"){
 
 	 var choixUtilisateur = prompt("Choisissez-vous pierre, feuille, ou ciseaux ?").toLowerCase();
 	var choixOrdi = Math.random();
-	if (choixUtilisateur === "stop"){
-		alert("salaud...");
+	// arrêter le jeu
+	if (choixUtilisateur === "s"){
+		alert("Dommage...");
 		break;
 
 	}
 	else if ((choixUtilisateur === '' ) && (choixUtilisateur !== "pierre") && (choixUtilisateur !== 'feuille') && (choixUtilisateur !== "ciseaux")){
-		alert('Joue Normalement C.....d');
+		alert('Veuillez choisir Pierre ,feuille ou Ciseaux');
 
 	}
 	
@@ -105,6 +116,27 @@ alert(" joueur " + comp1  + " " +" Ordi" + comp2);
 if (comp1 === 3){
 	alert("viens boire un coup...")
 }
-else{
-	alert("Tarlouzzzzzzzzzzzzzzzzzzz");
+else if (comp2 === 3){
+	alert("T'as pas le niveau");
 }
+else{
+	alert("Merci d'avoir participé");
+}
+
+
+// dom
+// afficher l'img pierre quand je clique sur le boutton
+
+
+
+
+
+
+           
+          
+
+
+ 
+
+
+
