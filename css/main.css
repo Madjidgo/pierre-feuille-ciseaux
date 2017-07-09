@@ -103,6 +103,9 @@ img{
 #divP,#divF,#divC,#pp{
     display: none;
 }
+#pp1,#pp2{
+    display: block;
+}
 
 
 

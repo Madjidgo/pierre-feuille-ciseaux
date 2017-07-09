@@ -1,10 +1,14 @@
 var comp1 =0;
 var comp2 = 0;
-var nom ;
+
+// entrez nom:
+var nom1 = prompt("Veuillez indiquer votre nom d'utilisateur...");
+var nom = document.getElementById('nom') ;
+nom.innerHTML= ('Entrez votre Nom:'+ nom1);
 
 
 var buttons = document.querySelectorAll("button");
-      //var nom = prompt("Veuillez indiquer votre nom d'utilisateur...");
+      
       for (let i = 0; i < buttons.length; i++){
         buttons[i].addEventListener("click", a);
         function a () {
@@ -116,9 +120,7 @@ else{
 var reset = document.getElementById('reset');
 reset.addEventListener('click',fReset);
 function fReset (){
- pp3.innerHTML = (" joueur: " + 0  + " " +" Ordi:" + 0);
- pp1.style.display = 'none';
- pp2.style.display = 'none';
+pp3.innerHTML= (" joueur " + 0  + " " +" Ordi" + 0);
 }
 
 
@@ -166,9 +168,3 @@ function mouseOut() {
      h1.style.opacity = "1";
      h1.style.fontSize = '40px';
 }
-
-
-
-
-
-
