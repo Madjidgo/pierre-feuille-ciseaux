@@ -100,9 +100,14 @@ img{
     height: 200px;
 }
 
-#divP,#divF,#divC{
+#divP,#divF,#divC,#pp{
     display: none;
 }
+
+
+
+
+
 
 
 

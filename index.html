@@ -14,49 +14,70 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <h1>Pierre ,Feuille, Ciseaux</h1>
         <div class="jumbotron">
-        <!-- <button type="button" class="btn btn-secondary "  id="btn1" onclick="this.textContent='Merci !';"><div id="chrono">vous avez passé </div> click </button> -->
+        <h1 id="demo" class="text-center" >Pierre ,Feuille, Ciseaux</h1>
         </div>
 
-        <div class="container">
+
+
+        <div class="container my-5">
             <div class="row">
 
-            <button type="button" id="btnP" class="btn btn-warning"><img class= "img-fluid" src="img/pierre.jpg" alt="pierre"></button>
+            <button  type="button " id="btnP"  class="btn btn-warning " name="pierre"><img  class= "img-fluid" src="img/pierre.jpg" alt="pierre"></button>
 
 
-            <button type="button" id="btnF" class="btn btn-danger"><img class =" img-fluid" src="img/feuille.jpg" alt="feuille"></button>
+            <button  type="button" id="btnF" class="btn btn-danger " name="feuille"><img class =" img-fluid" src="img/feuille.jpg" alt="feuille"></button>
 
     
-            <button type="button" id="btnC" class="btn btn-primary"><img  class="img-fluid" src="img/ciseaux.jpg" alt="ciseaux"></button>
+            <button   type="button" id="btnC" class="btn btn-primary " name="ciseaux"><img  class="img-fluid" src="img/ciseaux.jpg" alt="ciseaux"></button>
             </div>
         </div>
-        
 
-     <div class="container">
-        <figure id="divP">
-        <img class= "img-fluid" src="img/pierre.jpg"  alt="pierre">
-        </figure>
 
-        <figure id="divF">
-        <img class= "img-fluid" src="img/feuille.jpg"  alt="feuille">
-        </figure>
+<!-- <img id="pp" src=""></img> -->
+                <div class="container">
+                    <div class="row">
+                        <!-- egalité -->
+                       
+    <p class="card-text" id="pp"></p>
+    
+ 
+                        <!--  pp1 choix utili -->
+                       
+                <div class="card col-lg-4" style="width: 20rem;">
+  
+                  <div class="card-block">
+                    <h4 class="card-title">Utilisateur</h4>
+                    <p class="card-text" id="pp1"></p>
+                  </div>
+                </div>
 
-        <figure id="divC">
-        <img class= "img-fluid" src="img/ciseaux.jpg"  alt="ciseaux">
-        </figure>
-    </div>
-        
+                        <!-- pp2 choix ordi -->
+                 <div class="card col-lg-4" style="width: 20rem;">
+  
+                  <div class="card-block">
+                    <h4 class="card-title">Ordinnateur</h4>
+                    <p class="card-text" id="pp2"></p>
+                  </div>
+                </div>
+                            
+                            <!-- pp3 score -->
+                <div class="card col-lg-4" style="width: 20rem;">
+  
+                  <div class="card-block ">
+                    <h4 class="card-title">score</h4>
+                    <p class="card-text" id="pp3"></p>
+                    <a href="#" id="reset" class="btn btn-primary">Reset</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+
 
        
- 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
@@ -71,5 +92,6 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
+        <script src="js/bootstrap.min.js"></script> 
     </body>
 </html>

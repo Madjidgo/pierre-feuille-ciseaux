@@ -1,53 +1,25 @@
 var comp1 =0;
 var comp2 = 0;
-
-// dom
-
-var bP = document.querySelector('#btnP');
-var bF = document.querySelector('#btnF');
-var bC = document.querySelector('#btnC');
-
-var divP = document.querySelector('#divP');
-var divF = document.querySelector('#divF');
-var divC = document.querySelector('#divC');
-
-bP.addEventListener('click',p);
-function p(){
- divP.style.display = 'block';
-}
-
-bF.addEventListener('click',f);
-function f(){
- divF.style.display = 'block';
-}
-
-bC.addEventListener('click',c);
-function c(){
- divC.style.display = 'block';
-}
+var nom ;
 
 
+var buttons = document.querySelectorAll("button");
+      //var nom = prompt("Veuillez indiquer votre nom d'utilisateur...");
+      for (let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener("click", a);
+        function a () {
+          var choixUtilisateur = buttons[i].name;
 
 
-while(comp1 !== 3 && comp2 !==3  && choixUtilisateur !== "stop"){
-
-	 var choixUtilisateur = prompt("Choisissez-vous pierre, feuille, ou ciseaux ?").toLowerCase();
-	var choixOrdi = Math.random();
-	// arrêter le jeu
-	if (choixUtilisateur === "s"){
-		alert("Dommage...");
-		break;
-
-	}
-	else if ((choixUtilisateur === '' ) && (choixUtilisateur !== "pierre") && (choixUtilisateur !== 'feuille') && (choixUtilisateur !== "ciseaux")){
-		alert('Veuillez choisir Pierre ,feuille ou Ciseaux');
-
-	}
-	
-
-	
+  var pp = document.querySelector('#pp');
+  var pp1 = document.querySelector('#pp1');
+  var pp2 = document.querySelector('#pp2');
+  
+  var choixOrdi = Math.random();
+		
 if (choixOrdi < 0.34) {
 	choixOrdi = "pierre";
+
 
 } else if(choixOrdi <= 0.67) {
 	choixOrdi = "feuille";
@@ -55,12 +27,12 @@ if (choixOrdi < 0.34) {
 } else {
 	choixOrdi = "ciseaux";
 }
- alert("Ordinateur : " + choixOrdi);
+ pp2.innerHTML=("Ordinateur : " + choixOrdi);
 
-var comparer = function (choixUtilisateur,choixOrdi){
+// var comparer = function (choixUtilisateur,choixOrdi){
            if (choixUtilisateur === choixOrdi)
         {
-            return "Egalité !";
+            pp.innerHTML=("Egalité !") ;
         } 
 
     else if (choixUtilisateur === "pierre") 
@@ -68,13 +40,13 @@ var comparer = function (choixUtilisateur,choixOrdi){
     if (choixOrdi === "ciseaux")
     {
     	comp1 ++;
-        return "pierre gagne !";
+        pp1.innerHTML= (" pierre gagne !") ;
         
     } 
     else 
     {
     	comp2 ++;
-        return "feuille gagne !";
+        pp2.innerHTML= ( "feuille gagne !");
     }
     } 
     else if (choixUtilisateur === "feuille") 
@@ -83,12 +55,12 @@ var comparer = function (choixUtilisateur,choixOrdi){
 
     {
     	comp1 ++;
-        return "feuille gagne !";
+        pp1.innerHTML= ( "feuille gagne !");
     }
     else 
     {
     	comp2 ++;
-        return "ciseaux gagnent !";
+        pp2.innerHTML= ( "ciseaux gagnent !");
     }
     }
 
@@ -97,46 +69,106 @@ var comparer = function (choixUtilisateur,choixOrdi){
      	if (choixOrdi === "pierre")
      {
  			comp2++;
- 			return "pierre gagne";
+ 			pp2.innerHTML= ( "pierre gagne");
 
   }
   else 
   {
   	comp1++;
-  	return "ciseaux gagnent";
+  	pp1.innerHTML=("feuille gagne");
   }
 }
-}
 
- alert(comparer(choixUtilisateur,choixOrdi));
+// compte
+  pp3.innerHTML= (" joueur " + comp1  + " " +" Ordi" + comp2);
 
-alert(" joueur " + comp1  + " " +" Ordi" + comp2);
-}
 
-if (comp1 === 3){
-	alert("viens boire un coup...")
+
+
+
+// choixOrdi
+if (choixOrdi === "pierre" ) {
+  pp2.innerHTML = '<img class= "img-fluid" src="img/pierre.jpg" alt="pierre">';
 }
-else if (comp2 === 3){
-	alert("T'as pas le niveau");
+else if (choixOrdi === "feuille"){
+  pp2.innerHTML = '<img class= "img-fluid" src="img/feuille.jpg" alt="feuille">';
 }
 else{
-	alert("Merci d'avoir participé");
+  pp2.innerHTML = '<img class= "img-fluid" src="img/ciseaux.jpg" alt="ciseaux">';
 }
 
 
-// dom
-// afficher l'img pierre quand je clique sur le boutton
+// choix Utilisateurs
+if (choixUtilisateur === "pierre" ) {
+  pp1.innerHTML = '<img class= "img-fluid" src="img/pierre.jpg" alt="pierre">';
+}
+else if (choixUtilisateur === "feuille"){
+  pp1.innerHTML = '<img class= "img-fluid" src="img/feuille.jpg" alt="feuille">';
+}
+else{
+  pp1.innerHTML = '<img class= "img-fluid" src="img/ciseaux.jpg" alt="ciseaux">';
+}
+// fermeture du for
+
+}
+}
+// reset
+var reset = document.getElementById('reset');
+reset.addEventListener('click',fReset);
+function fReset (){
+ pp3.innerHTML = (" joueur: " + 0  + " " +" Ordi:" + 0);
+ pp1.style.display = 'none';
+ pp2.style.display = 'none';
+}
 
 
 
+// animation
+var x = document.getElementById('btnP');
+x.addEventListener('click',y);
+function y(){
+   pp1.style.backgroundColor = 'red';
+   pp2.style.backgroundColor = 'orange';
+   
+}
+
+var x1 = document.getElementById('btnF');
+x1.addEventListener('click',y1);
+function y1(){
+  pp1.style.backgroundColor = 'green';
+  pp2.style.backgroundColor = 'yellow';
+
+}
+
+var x2 = document.getElementById('btnC');
+x2.addEventListener('click',y2);
+function y2(){
+  pp1.style.backgroundColor = 'blue';
+  pp2.style.backgroundColor = '#f89';
+}
+
+// h1 animation
+
+var h1 = document.getElementById('demo')
+
+h1.addEventListener('mouseover',mouseOver);
+function mouseOver() {
+
+    h1.style.color = "red";
+    h1.style.opacity = "0.5";
+    h1.style.fontSize = '50px';
+
+
+}
+h1.addEventListener('mouseout',mouseOut);
+function mouseOut() {
+    h1.style.color = "black";
+     h1.style.opacity = "1";
+     h1.style.fontSize = '40px';
+}
 
 
 
-           
-          
-
-
- 
 
 
 
