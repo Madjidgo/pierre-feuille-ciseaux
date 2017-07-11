@@ -1,15 +1,21 @@
 var comp1 =0;
 var comp2 = 0;
+var tag  = document.getElementsByTagName('h3');
+console.log(tag[0]);
+
 
 // entrez nom:
 var nom1 = prompt("Veuillez indiquer votre nom d'utilisateur...");
 var nom = document.getElementById('nom') ;
-nom.innerHTML= ('Entrez votre Nom:'+ nom1);
+nom.innerHTML= ('Bienvenue:'+ nom1.toUpperCase());
 
+var utilisateur = document.getElementById('utilisateur');
+utilisateur.innerHTML = 'As toi de jouer :'+ nom1.toUpperCase();
+
+// function
 
 var buttons = document.querySelectorAll("button");
-      
-      for (let i = 0; i < buttons.length; i++){
+       for (let i = 0; i < buttons.length; i++){
         buttons[i].addEventListener("click", a);
         function a () {
           var choixUtilisateur = buttons[i].name;
@@ -33,7 +39,9 @@ if (choixOrdi < 0.34) {
 }
  pp2.innerHTML=("Ordinateur : " + choixOrdi);
 
-// var comparer = function (choixUtilisateur,choixOrdi){
+// var comparer = function (choixUtilisateur,choixOrdi)
+
+
            if (choixUtilisateur === choixOrdi)
         {
             pp.innerHTML=("Egalité !") ;
@@ -121,6 +129,7 @@ var reset = document.getElementById('reset');
 reset.addEventListener('click',fReset);
 function fReset (){
 pp3.innerHTML= (" joueur " + 0  + " " +" Ordi" + 0);
+
 }
 
 
@@ -150,8 +159,7 @@ function y2(){
 }
 
 // h1 animation
-
-var h1 = document.getElementById('demo')
+var h1 = document.getElementById('demo');
 
 h1.addEventListener('mouseover',mouseOver);
 function mouseOver() {
@@ -160,11 +168,25 @@ function mouseOver() {
     h1.style.opacity = "0.5";
     h1.style.fontSize = '50px';
 
-
 }
 h1.addEventListener('mouseout',mouseOut);
 function mouseOut() {
-    h1.style.color = "black";
+    h1.style.color = "";
      h1.style.opacity = "1";
-     h1.style.fontSize = '40px';
+     h1.style.fontSize = '';
+}
+
+function myMove() {
+    var elem = document.getElementById("demo");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
 }
